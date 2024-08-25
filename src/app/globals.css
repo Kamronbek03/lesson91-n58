@@ -2,32 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Dark Mode Styles */
+html.dark body {
+  --background-color: #202c36;
+  --header-background-color: #2b3844;
+  --card-background-color: #2b3844;
+  --text-color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html.dark body {
+  background-color: var(--background-color);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+header {
+  background-color: white;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+html.dark header {
+  background-color: var(--header-background-color);
+  color: var(--text-color);
+}
+
+html.dark .bg-white {
+  background-color: var(--card-background-color);
+}
+
+html.dark .text-gray-800 {
+  color: var(--text-color);
+}
+
+html.dark .container {
+  background-color: var(--background-color);
+}
+
+html.dark .min-h-screen {
+  background-color: var(--background-color);
+}
+
+input,
+select {
+  border: none;
+  outline: none;
+}
+
+input::placeholder,
+select::placeholder {
+  color: #6b7280; /* Tailwind's gray-500 */
+}
+
+html.dark input::placeholder,
+html.dark select::placeholder {
+  color: #d1d5db; /* Tailwind's gray-300 */
+}
+
+/* Card Text Dark Mode */
+html.dark .card-text {
+  color: var(--text-color);
+}
+
+/* Max-width for Flag Images */
+img.flag-image {
+  max-width: 560px;
+}
+
+.md-ml-144 {
+  margin-left: 144px;
+}
+
+.mb-68 {
+  margin-bottom: 68px;
 }
